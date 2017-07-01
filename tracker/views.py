@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
 # Create your views here.
-def post_list(request):
-    return render(request, 'tracker/post_list.html', {})
+def track_list(request):
+    return render(request, 'tracker/track_list.html', {})
