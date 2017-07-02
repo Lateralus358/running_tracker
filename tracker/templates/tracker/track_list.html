@@ -1,25 +1,16 @@
-{% load staticfiles %}
-<html>
-    <head>
-        <title>Running Tracker</title>
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{% static 'css/tracker.css' %}">
-    </head>
-    <body>
-        <div class="page-header">           
-            <h1><a href="/">Running Tracker</a></h1>          
-        </div>
-        
-        <!--<div id="container"></div>-->
-        <!--<script type="text/javascript" src="{% static "js/highchart.js" %}"></script> -->
+{% extends 'tracker/base.html' %}
+
+{% block content %}
         <div class="content container">
-            <a href="/"><span class="glyphicon glyphicon-plus"></span></a>
-            <p style="display: inline;">Add New Run</p>
-            <br>
-            <br>
+            <nav class="navbar navbar-light bg-faded">
+            <form class="form-inline">
+                <button class="btn btn-outline-success" type="button">View Dashboard</button>
+                <button class="btn btn-outline-success" type="button">Add New Run</button>
+                <button class ="btn btn-outline-success" type="button" onclick="{% url 'tracker_dashboard' %}"></button>
+            </form>
+            </nav>
+            <!--<a href="{% url 'tracker_dashboard' %}"><span class="glyphicon glyphicon-plus"></span></a>
+            <p style="display: inline;">Add New Run</p> -->
             <div class="row">
                 <div class="col-md-12">
                     <table class="table">
@@ -41,5 +32,4 @@
                 </div>
             </div>
         </div>
-    </body>
-</html>
+{% endblock %}
